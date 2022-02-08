@@ -1,8 +1,6 @@
 package BasePage;
 
-import Elements.CheckBox;
-import Elements.RadioBtn;
-import Elements.TextBox;
+import Elements.*;
 import HomePage.HomePage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
@@ -25,6 +23,9 @@ public class Base {
     public TextBox textBox;
     public CheckBox checkBox;
     public RadioBtn radioBtn;
+    public Buttons buttons;
+    public Links links;
+    public UploadDownload uploadDownload;
     public String Home;
 
 
@@ -37,6 +38,9 @@ public class Base {
         textBox = new TextBox(driver);
         checkBox = new CheckBox(driver);
         radioBtn = new RadioBtn(driver);
+        buttons = new Buttons(driver);
+        links = new Links(driver);
+        uploadDownload = new UploadDownload(driver);
 
         excelReader = new ExcelReader("C:\\Users\\DELL\\Desktop\\Excel Selenium\\DemoQA.xlsx");
         Home = excelReader.getStringData("Pages", 1, 0);
